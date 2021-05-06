@@ -17,7 +17,7 @@ namespace ScriptableObjects
 
         #region Event Triggering
 
-        public void TriggerStateChange(IBaseState toState)
+        public static void TriggerStateChange(IBaseState toState)
         {
             OnStateChange?.Invoke(toState);
         }

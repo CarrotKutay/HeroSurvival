@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 namespace FSM.State
@@ -13,10 +12,16 @@ namespace FSM.State
             this.stateMachine = stateMachine;
         }
         
+        /**
+         * Execute this state
+         */
         public virtual void RunState()
         {
-            // run state
+#if UNITY_EDITOR
+            
             Debug.Log($"running state {this}");
+            
+#endif
         }
     }
 
@@ -32,11 +37,17 @@ namespace FSM.State
 
         #region OnEnter / OnExit Behavior
 
+        /**
+         * Define state entering behavior
+         */
         public virtual void OnEnter()
         {
             return;
         }
-
+        
+        /**
+         * Define state exiting behavior
+         */
         public virtual void OnExit()
         {
             return;
@@ -44,9 +55,15 @@ namespace FSM.State
 
         #endregion
         
+        /**
+         * Execute sub state logic
+         */
         public virtual void RunSubState()
         {
+#if UNITY_EDITOR
+            
             Debug.Log($"running sub-state {this}");
+#endif
         }
     }
 }

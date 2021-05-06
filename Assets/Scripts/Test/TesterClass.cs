@@ -9,7 +9,6 @@ namespace Test
     public class TesterClass : MonoBehaviour
     {
         private GameStateMachine gameStateMachine;
-        [SerializeField] private StateEvent stateEvent;
 
         private void Awake()
         {
@@ -20,17 +19,17 @@ namespace Test
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
-                stateEvent.TriggerStateChange(
+                StateEvent.TriggerStateChange(
                     gameStateMachine.GetState(typeof(GameStatePause)));
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
-                stateEvent.TriggerStateChange(
+                StateEvent.TriggerStateChange(
                     gameStateMachine.GetState(typeof(GameStatePlay)));
             }
             if (Input.GetKeyDown(KeyCode.D))
             {
-                stateEvent.TriggerStateChange(
+                StateEvent.TriggerStateChange(
                     gameStateMachine.GetState(typeof(GameStateExit)));
             }
         }
